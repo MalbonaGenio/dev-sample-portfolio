@@ -45,16 +45,25 @@ body {
   line-height: 1.6;
 }
 
+section {
+  padding: 5em 2em;
+}
+
 /* avoid overflow of images */
 img {
   display: block;
   max-width: 100%;
 }
 
+strong {
+  font-weight: var(--fw-bold);
+}
+
+/* typography */
 h1,
 h2,
 h3 {
-  line-height: 1.1;
+  line-height: 1;
   margin: 0;
 }
 
@@ -72,6 +81,14 @@ h3 {
   margin: 0.25em;
 }
 
+.section__title--intro {
+  font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+  /* forces the strong to we in it's own line always */
+  display: block;
+}
 .section__subtitle {
   margin: 0;
   font-size: var(--fs-h3);
@@ -81,4 +98,43 @@ h3 {
 .section__subtitle--about {
   font-family: var(--ff-secondary);
   background: var(--clr-accent);
+  margin-bottom: 1em;
+}
+
+/* HEADER */
+
+/* INTRO SECTION */
+.intro {
+  position: relative;
+}
+
+@media (min-width: 600px) {
+  .intro {
+    display: grid;
+    margin: 0 auto;
+    width: min-content;
+    grid-column-gap: 1em;
+    grid-template-areas: 
+      "img title"
+      "img subtitle";
+    /* img we want to occupy the less space as possible, and the opposite for the text */
+    grid-template-columns: min-content max-content;
+  }
+  .intro__img {
+    grid-area: img;
+    /* avoid img to dissapear bc of min-content */
+    min-width: 250px;
+  }
+  .section__subtitle--intro{
+    /* prevents streching */
+    align-self: start;
+    grid-column: -1/1;
+    grid-row: 2;
+    text-align: right;
+    /* to create the accent bar overflow behind the img */
+    position: relative;
+    left: -1.5em;
+    /* we add back the width lost in the relative left displacement */
+    width: calc(100% + 1.5em);
+  }
 }
