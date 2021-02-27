@@ -22,6 +22,9 @@
   --clr-light: #fff;
   --clr-dark: #303030;
   --clr-accent: #16e0bd;
+  /* box shadow */
+  --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
 /* redefine the custom properties for large screens */
@@ -57,6 +60,31 @@ img {
 
 strong {
   font-weight: var(--fw-bold);
+}
+
+/* gives an outline to all link when in focus */
+:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5em 2.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
 }
 
 /* typography */
@@ -98,6 +126,7 @@ h3 {
 .section__subtitle--about {
   font-family: var(--ff-secondary);
   background: var(--clr-accent);
+  padding: 0.25em 1em;
   margin-bottom: 1em;
 }
 
@@ -108,6 +137,13 @@ h3 {
   position: relative;
 }
 
+.intro__img { 
+  box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+  display: inline-block;
+}
 @media (min-width: 600px) {
   .intro {
     display: grid;
@@ -124,6 +160,8 @@ h3 {
     grid-area: img;
     /* avoid img to dissapear bc of min-content */
     min-width: 250px;
+    position: relative;
+    z-index: 2;
   }
   .section__subtitle--intro{
     /* prevents streching */
@@ -136,5 +174,56 @@ h3 {
     left: -1.5em;
     /* we add back the width lost in the relative left displacement */
     width: calc(100% + 1.5em);
+  }
+}
+
+/* SERVICES SECTION */
+
+.my-services {
+  /* set up a background in case img fails to load */
+  background-color: var(--clr-dark);
+  background-image: url(../img/services-bg.jpg);
+  background-size: cover;
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section__title--services {
+  color: var(--clr-accent);
+  position: relative;
+}
+
+.section__title--services::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 1px;
+  background: var(--clr-light);
+  margin: 0.5em auto 1em;
+  opacity: 0.3;
+}
+
+.services {
+  /* creates extra spacing between the service and the button */
+  margin-bottom: 4em;
+}
+
+.service {
+  /* avoids text streching to much before the 800px threshold */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media(min-width: 800px) {
+  .services {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* adds margin left is there is a service is a sibling of another service */
+  .service + .service {
+    margin-left: 2em;
   }
 }
