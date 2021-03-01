@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevJane Portfolio Website</title>
-    <!-- normalize for same view in diferent browsers -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
-    />
-    <!-- font awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-      integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
-      crossorigin="anonymous"
-    />
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;900&family=Source+Sans+Pro:wght@300;900&display=swap" rel="stylesheet">
-    <!-- css -->
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <header>
-      <!-- set in a div in case want to set it as svg or more easily modify it -->
-      <div class="logo">
-        <img src="img/devjane.png" alt="" />
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>DevJane Portfolio Website</title>
+	<!-- normalize for same view in diferent browsers -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+	<!-- font awesome icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
+	 crossorigin="anonymous" />
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;900&family=Source+Sans+Pro:wght@300;900&display=swap"
+	 rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<header>
+		<!-- set in a div in case want to set it as svg or more easily modify it -->
+		<div class="logo">
+			<img src="img/devjane.png" alt="" />
       </div>
       <!-- hamburger navigation button -->
       <button class="nav-toggle" aria-label="toggle navigation">
@@ -143,12 +139,29 @@
       </div>
     </section>
     <!-- footer -->
-    <footer>
-      <a href="mailto:hello@adress.com">hello@adress.com</a>
+    <footer class="footer"> 
+      <a href="mailto:hello@adress.com" class="footer__link">hello@adress.com</a>
       <ul class="social-list">
-        <li class="socila-list__item"><a href="https://twitter.com" class="social-list__link">A</a></li>
-        <li class="socila-list__item"><a href="https://github.com" class="social-list__link">A</a></li>
-        <li class="socila-list__item"><a href="#" class="social-list__link">A</a></li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://codepen.io">
+            <i class="fab fa-codepen"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="http://dribbble.com">
+            <i class="fab fa-dribbble"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://twitter.com">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://github.com">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
       </ul>
     </footer>
     
