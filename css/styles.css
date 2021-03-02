@@ -175,7 +175,6 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 .nav__link {
@@ -189,6 +188,49 @@ header {
   color: var(--clr-accent);
 }
 
+.nav-toggle {
+  padding: .5em;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  /* want to display: the hamburger above the nav list to */
+  position: absolute;
+  z-index: 1000;
+  /* make sure the position is correct */
+  right: 1em;
+  top: 1em;
+  
+}
+
+.hamburger {
+  /* changes the behaivour of a span (inline by default) */
+  display: block;
+  /* using some pseudoelements with absolute positioning */
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background: var(--clr-dark);
+  width: 2em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+  /* Place the top and bottom bars of the hamburger to their position.
+    3px from the heigth then 6px, if we set a 3px the will look like a single more thick line. */
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }
 
 /* INTRO SECTION */
 .intro {
